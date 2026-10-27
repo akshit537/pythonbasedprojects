@@ -139,12 +139,12 @@ def delete_records():
             else:
                 cursor.execute("delete from employee_details where Employee_ID=%s",(emp_id,))
                 conn.commit()
-                cursor.close()
-                print("employee data deleted successfull")
-        if choice==2:
+                print("employee data deleted successfully")
+        elif choice==2:
             break
         else:
             print("Invalid input")
+    cursor.close()
 def emenu():
     while True:
         print("------------------------------------------")
