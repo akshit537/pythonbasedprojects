@@ -41,6 +41,7 @@ def record_attendence():
                     else:
                         print("Employee Id doesn't exist in database.")
                 elif Choices==2:
+                    cursor.execute("select*from employee_details where Employee_ID=%s",(emp_id,))
                     if cursor.fetchone():
                         cursor.execute("select*from user_attendence where Employee_ID=%s and att_date=%s",(emp_id,at_date,))
                         if not cursor.fetchall():
@@ -54,6 +55,7 @@ def record_attendence():
                     else:
                         print("Employee Id doesn't exist in database.")
                 elif Choices==3:
+                    cursor.execute("select*from employee_details where Employee_ID=%s",(emp_id,))
                     if cursor.fetchone():
                         cursor.execute("select*from user_attendence where Employee_ID=%s and att_date=%s",(emp_id,at_date,))
                         if not cursor.fetchall():
