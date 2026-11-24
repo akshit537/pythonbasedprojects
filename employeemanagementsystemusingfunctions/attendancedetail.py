@@ -59,7 +59,7 @@ def record_attendence():
                     if cursor.fetchone():
                         cursor.execute("select*from user_attendence where Employee_ID=%s and att_date=%s",(emp_id,at_date,))
                         if not cursor.fetchall():
-                            status="Present"
+                            status="Leave"
                             cursor.execute("""insert into user_attendence(Employee_ID,att_date,attendance_status)
                     values(%s,%s,%s)""",(emp_id,at_date,status))
                             conn.commit()
